@@ -34,9 +34,7 @@ Citizen.CreateThread(function()
             if dashcamActive then
                 DisableDash()
             else
-				if DashcamConfig.AudioEnabled then
-				TriggerEvent("dashcam:sounds", "beep", DashcamConfig.Volume)
-                end
+				
 				EnableDash()
             end
         end
@@ -55,6 +53,9 @@ function EnableDash()
     attachedVehicle = GetVehiclePedIsIn(GetPlayerPed(PlayerId()), false)
     if DashcamConfig.RestrictVehicles then
         if CheckVehicleRestriction() then
+			if DashcamConfig.AudioEnabled then
+				TriggerEvent("dashcam:sounds", "beep", DashcamConfig.Volume)
+                end
 			--[[ if IsVehicleDamaged(attachedVehicle) and DashcamConfig.DamagedCamera then
 			if GetVehicleEngineHealth(attachedVehicle) < DashcamConfig.DamageValueCamera then
             SetTimecycleModifier("CAMERA_BW")
