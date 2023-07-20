@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>Police Dashcam</title>
+        <link rel="stylesheet" href="./style.css">
+    </head>
+    <body>
+        <div id="Dashcam_Body" v-show="showDash">
+            <div id="Dashcam_Data">
+                <div id="Dashcam_Gametime">{{ gameTime }}</div>
+                <div id="Dashcam_DateTime">{{ clockTime.month }} / {{clockTime.day}} / {{clockTime.year}}</div>
+                <div id="Dashcam_ClockTime">{{clockTime.hour}} : {{clockTime.minute}} : {{clockTime.second}}</div>
+                <div id="Dashcam_Unitnumber">Unit: {{ unitNumber }}</div>
+                <div id="Dashcam_Unitname">Name: {{ unitName }}</div>
+                <div id="Dashcam_Unitspeed">Speed: {{ unitSpeed }} {{ unitSpeedType }}</div>
+            </div>
+        </div>
+        <script src="./vue.min.js"></script>
+        <script src="./script.js"></script>
+    </body>
+</html>
